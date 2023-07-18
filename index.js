@@ -16,6 +16,7 @@ const client = new MongoClient( uri, {
   serverApi: ServerApiVersion.v1,
 });
 
+
 const run = async () => {
   try {
     const db = client.db('Bookcatalog');
@@ -34,7 +35,6 @@ const run = async () => {
       const book = req.body;
 
       const result = await bookCollection.insertOne(book);
-
       res.send(result);
     });
 
